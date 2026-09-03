@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/core/character_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/tide.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"tide"
+display_name = "TIDE"
+title = "Field Medic"
+element = &"hydro"
+max_hp = 168
+attack = 27
+defense = 18
+move_speed = 270.0
+skill_name = "Mending Wave"
+skill_kind = "heal_wave"
+skill_cooldown = 7.0
+ultimate_name = "Blue Horizon"
+primary_color = Color(0.17, 0.65, 0.9, 1)
+accent_color = Color(0.47, 0.96, 0.91, 1)
+world_sprite = ExtResource("2")
+portrait = ExtResource("2")

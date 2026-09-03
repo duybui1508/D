@@ -1,0 +1,84 @@
+[application]
+
+config/name="D: Rift Protocol"
+config/description="A data-driven 2D action RPG combat sandbox."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.027, 0.035, 0.059, 1)
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="PlayerHitbox"
+2d_physics/layer_5="EnemyHitbox"
+
+[input]
+
+move_up={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":87), Object(InputEventKey,"physical_keycode":4194320)]
+}
+move_down={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":83), Object(InputEventKey,"physical_keycode":4194322)]
+}
+move_left={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":65), Object(InputEventKey,"physical_keycode":4194319)]
+}
+move_right={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":68), Object(InputEventKey,"physical_keycode":4194321)]
+}
+attack={
+"deadzone": 0.3,
+"events": [Object(InputEventMouseButton,"button_index":1)]
+}
+skill={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":69)]
+}
+ultimate={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":81)]
+}
+swap_1={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":49)]
+}
+swap_2={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":50)]
+}
+swap_3={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":51)]
+}
+swap_4={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":52)]
+}
+restart={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":82)]
+}

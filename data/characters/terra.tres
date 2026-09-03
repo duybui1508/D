@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/core/character_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/terra.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"terra"
+display_name = "TERRA"
+title = "Stone Warden"
+element = &"geo"
+max_hp = 210
+attack = 31
+defense = 35
+move_speed = 245.0
+skill_name = "Fault Line"
+skill_kind = "quake"
+skill_cooldown = 5.5
+ultimate_name = "Worldshaper"
+primary_color = Color(0.82, 0.55, 0.2, 1)
+accent_color = Color(1, 0.86, 0.42, 1)
+world_sprite = ExtResource("2")
+portrait = ExtResource("2")

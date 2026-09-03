@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/actors/player_character.gd" id="1_player"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleBody"]
+radius = 18.0
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleHurt"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleAttack"]
+radius = 34.0
+
+[node name="PlayerCharacter" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_player")
+
+[node name="Aura" type="Polygon2D" parent="."]
+z_index = -2
+polygon = PackedVector2Array(-31, 18, 0, 29, 31, 18, 0, 9)
+color = Color(0.3, 0.8, 1, 0.22)
+
+[node name="Shadow" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(-24, 15, 0, 24, 24, 15, 0, 9)
+color = Color(0.01, 0.015, 0.03, 0.58)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(0.58, 0.58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleBody")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleHurt")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("CircleAttack")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+zoom = Vector2(1.06, 1.06)

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/core/character_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/volt.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"volt"
+display_name = "VOLT"
+title = "Signal Breaker"
+element = &"shock"
+max_hp = 120
+attack = 42
+defense = 8
+move_speed = 315.0
+skill_name = "Arc Lance"
+skill_kind = "projectile"
+skill_cooldown = 4.0
+ultimate_name = "Zero-Frame Storm"
+primary_color = Color(0.48, 0.35, 1, 1)
+accent_color = Color(0.78, 0.68, 1, 1)
+world_sprite = ExtResource("2")
+portrait = ExtResource("2")

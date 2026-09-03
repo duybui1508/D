@@ -1,0 +1,21 @@
+name: Godot CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Import project
+        run: godot --headless --editor --path . --quit
+
+      - name: Run smoke tests
+        run: godot --headless --path . --script res://tests/test_runner.gd

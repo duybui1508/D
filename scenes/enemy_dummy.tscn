@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/actors/enemy_dummy.gd" id="1_enemy"]
+[ext_resource type="Script" path="res://src/actors/enemy_hurtbox.gd" id="2_hurtbox"]
+[ext_resource type="Texture2D" path="res://assets/enemies/voidling.svg" id="3_sprite"]
+
+[sub_resource type="CircleShape2D" id="CircleBody"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleHurt"]
+radius = 30.0
+
+[node name="EnemyDummy" type="CharacterBody2D"]
+z_index = 8
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_enemy")
+
+[node name="Shadow" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(-26, 15, 0, 24, 26, 15, 0, 8)
+color = Color(0.01, 0.015, 0.03, 0.62)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("3_sprite")
+scale = Vector2(0.54, 0.54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleBody")
+
+[node name="EnemyHurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("2_hurtbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtbox"]
+shape = SubResource("CircleHurt")

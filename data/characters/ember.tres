@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/core/character_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"ember"
+display_name = "EMBER"
+title = "Ash Vanguard"
+element = &"fire"
+max_hp = 148
+attack = 34
+defense = 15
+move_speed = 280.0
+skill_name = "Afterburn Sentry"
+skill_kind = "turret"
+skill_cooldown = 6.0
+ultimate_name = "Solar Collapse"
+primary_color = Color(1, 0.31, 0.38, 1)
+accent_color = Color(1, 0.79, 0.35, 1)
+world_sprite = ExtResource("2")
+portrait = ExtResource("2")
