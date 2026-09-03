@@ -39,5 +39,12 @@ func _draw() -> void:
 		true
 	)
 	draw_arc(
-		Vector2.ZERO, max_radius * eased * 0.72, 0.0, TAU, 64, Color.WHITE, alpha * 0.38, 2.0, true
+		Vector2.ZERO,
+		max_radius * eased * 0.72,
+		0.0,
+		TAU,
+		64,
+		Color(Color.WHITE, alpha * 0.38),
+		2.0,
+		true
 	)
